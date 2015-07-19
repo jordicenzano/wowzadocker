@@ -29,6 +29,7 @@ EXPOSE 8087
 EXPOSE 8088
 
 #Create user deploy (TODO: Improve passing pass in some smart way)
+#adduser.sh: useradd -m -s /bin/bash -p $(openssl passwd -1 -salt xyz SOMESMARTPASS) USERNAME
 COPY creds/adduser.sh /tmp/adduser.sh
 RUN chmod 755 /tmp/adduser.sh
 RUN /tmp/adduser.sh

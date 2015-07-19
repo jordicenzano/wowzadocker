@@ -1,0 +1,1 @@
+ssh -vvv -p 2222 -i ./creds/wowzadocker deploy@127.0.0.1

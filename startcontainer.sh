@@ -1,0 +1,1 @@
+docker run --name='wowzatest' -it --rm -e 'WOWZA_KEY=xxxx-xxxx-xxxx-xxxx-xxxx-xxxx-xxxx' -p 2222:22 -p 1935:1935 -p 8086:8086 -p 8087:8087 -p 8088:8088 jcenzano/wowza1_420

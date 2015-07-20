@@ -48,3 +48,7 @@ autorestart=true
 stdout_logfile=/var/log/wowza/supervisor/%(program_name)s.log
 stderr_logfile=/var/log/wowza/supervisor/%(program_name)s.log
 EOF
+
+#Create logs dir
+mkdir -m 0755 -p /var/log/wowza/supervisor
+chown -R root:root /var/log/wowza/supervisor

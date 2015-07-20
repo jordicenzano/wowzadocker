@@ -1,1 +1,1 @@
-docker exec -it wowzatest /bin/bash
+docker exec -it wowzatest_container /bin/bash

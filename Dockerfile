@@ -1,17 +1,22 @@
 # Generate a docker with wowza 4.2.0 & SSH
 # by Jordi Cenzano
-# VERSION               1.0.0
+# VERSION               1.0.1
 
 FROM ubuntu:14.04
 MAINTAINER jordi.cenzano@gmail.com
 
 #Update
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update && \
+	apt-get clean
+
+RUN apt-get upgrade -y && \
+	apt-get clean
 
 #Install packages
-RUN apt-get install ssh -y
-RUN apt-get install supervisor -y
+RUN apt-get install ssh -y && \
+	apt-get install supervisor -y && \
+	apt-get clean
+
 
 #Create volume data
 VOLUME ["/data"]
@@ -22,11 +27,7 @@ RUN chmod 755 /iniscripts/wowzainstall.sh
 #TODO:RUN /iniscripts/wowzainstall.sh #We need a silence installation method (provided by wowza)
 
 #Expose wowza ports + SSH
-EXPOSE 22
-EXPOSE 1935
-EXPOSE 8086
-EXPOSE 8087
-EXPOSE 8088
+EXPOSE 22 1935 8086 8087 8088
 
 #Create user deploy (TODO: Improve passing pass in some smart way)
 #adduser.sh: useradd -m -s /bin/bash -p $(openssl passwd -1 -salt xyz SOMESMARTPASS) USERNAME

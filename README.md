@@ -1,2 +1,2 @@
 # wowzadocker
-Docker files that creates a docker image with wowa + ssh
+Docker files that creates a docker image with Wowza + ssh

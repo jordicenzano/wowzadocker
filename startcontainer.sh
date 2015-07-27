@@ -1,7 +1,7 @@
 #Fisrt parameter is the image ID/name
 if [ "$#" -ne 1 ]
 then
-  echo "Usage: startcontainer.sh CONTAINER_ID/NAME"
+  echo "Usage: startcontainer.sh IMAGE_ID/NAME"
   exit 1
 fi
 
